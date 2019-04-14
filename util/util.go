@@ -38,6 +38,21 @@ func GetIntegerInput(msg string) (int, error) {
 	return iVal, err
 }
 
+func GetFloatInput(msg string) (float64, error) {
+	if msg == "" {
+		msg = "Input number of operation:"
+	}
+
+	val, err := GetInput(msg)
+
+	if err != nil {
+		return float64(-1), err
+	}
+
+	fVal, err := strconv.ParseFloat(val, 64)
+	return fVal, err
+}
+
 func OutputError(err error) {
 	log.New(os.Stderr, "", 1)
 	log.Println(err)
