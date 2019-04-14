@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"learningGo/currency"
 	"learningGo/factorial"
 	"learningGo/util"
 	"os"
@@ -27,6 +28,7 @@ func OutputMenu() {
 	util.Clear()
 	fmt.Println("=== Menu ===")
 	fmt.Println("\t[1] Factorial Finder")
+	fmt.Println("\t[2] Currency Exchange")
 	fmt.Println("\t[q] Quit")
 }
 
@@ -35,6 +37,9 @@ func HandleSelection(selection string) {
 	switch selection {
 	case "1":
 		factorial.Run()
+		break
+	case "2":
+		currency.Run()
 		break
 	case "q":
 		os.Exit(0)
