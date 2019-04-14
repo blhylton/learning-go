@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"learningGo/currency"
 	"learningGo/factorial"
+	"learningGo/triangles"
 	"learningGo/util"
 	"os"
 )
@@ -29,6 +30,8 @@ func OutputMenu() {
 	fmt.Println("=== Menu ===")
 	fmt.Println("\t[1] Factorial Finder")
 	fmt.Println("\t[2] Currency Exchange")
+	fmt.Println("\t[3] Print Triangle (Smallest to Largest)")
+	fmt.Println("\t[4] Print Triangle (Largest to Smallest)")
 	fmt.Println("\t[q] Quit")
 }
 
@@ -41,12 +44,18 @@ func HandleSelection(selection string) {
 	case "2":
 		currency.Run()
 		break
+	case "3":
+		triangles.Run("ASC")
+		break
+	case "4":
+		triangles.Run("DESC")
+		break
 	case "q":
 		os.Exit(0)
 	default:
 		util.OutputError(errors.New("invalid selection"))
 	}
 
-	fmt.Println("Press 'Enter' to continue...")
+	fmt.Print("Press 'Enter' to continue...")
 	_, _ = bufio.NewReader(os.Stdin).ReadBytes('\n')
 }
