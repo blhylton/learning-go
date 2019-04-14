@@ -2,8 +2,10 @@ package util
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"os/exec"
 	"runtime"
@@ -68,4 +70,26 @@ func Clear() {
 	} else {
 		panic("Your platform is unsupported! I can't clear terminal screen :(")
 	}
+}
+
+func StringArrayBinarySearch(a []string, x string) (int, error) {
+	l, r := 0, len(a)
+
+	for l <= r {
+		m := int(math.Floor(float64(l + (r-l)/2)))
+
+		comparison := strings.Compare(a[m], x)
+
+		switch comparison {
+		case 0:
+			return m, nil
+		case -1:
+			l = m + 1
+			break
+		case 1:
+			r = m - 1
+		}
+	}
+
+	return -1, errors.New("element not in array")
 }
