@@ -1,4 +1,4 @@
-#My Go Experiments
+# My Go Experiments
 
 Recently, due to some feedback that I've received, I've taken on learning [GoLang](https://golang.org/). This is just a
 repository for gathering all of my "Baby's First Project" projects since working through things like this is how I learn
@@ -9,7 +9,7 @@ anything, and I can't guarantee that in some cases it will even be correct, so u
 
 I also welcome any code review or pointers should someone feel inclined.
 
-##License
+## License
 [MIT License](https://choosealicense.com/licenses/mit/)
 
 Copyright (c) 2019 Barry Hylton
